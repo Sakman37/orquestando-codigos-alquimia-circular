@@ -54,6 +54,13 @@ El prototipo es un monolito modular. `domain` valida reglas de oferta; `applicat
 
 Los diagramas UML editables se encuentran en `docs/uml/`. La implementación no simula alta disponibilidad ni escalado horizontal: el archivo JSON y el proceso único se reemplazarían antes de un piloto multiusuario.
 
+| Diagrama | Imagen | Fuente editable |
+| --- | --- | --- |
+| Casos de uso | `docs/uml/casos-de-uso.png` | `docs/uml/casos-de-uso.puml` |
+| Clases | `docs/uml/clases.png` | `docs/uml/clases.puml` |
+| Secuencia | `docs/uml/secuencia-reserva.png` | `docs/uml/secuencia-reserva.puml` |
+| Despliegue cloud | `docs/uml/despliegue-cloud.png` | `docs/uml/despliegue.puml` |
+
 ## Estructura
 
 ```text
