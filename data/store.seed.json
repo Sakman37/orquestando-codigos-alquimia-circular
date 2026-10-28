@@ -1,0 +1,46 @@
+{
+  "offers": [
+    {
+      "id": "ofr-pan-001",
+      "merchantName": "Panadería La Esquina",
+      "name": "Pack de pan del día",
+      "category": "Panadería",
+      "description": "Selección de pan fresco elaborado hoy.",
+      "quantityAvailable": 4,
+      "regularPrice": 14000,
+      "rescuePrice": 6000,
+      "pickupWindow": "Hoy, 5:00 p. m. a 6:30 p. m.",
+      "status": "available",
+      "createdAt": "2026-10-27T14:00:00.000Z"
+    },
+    {
+      "id": "ofr-fru-002",
+      "merchantName": "Frutas del Parque",
+      "name": "Canasta de fruta madura",
+      "category": "Frutas y verduras",
+      "description": "Fruta madura en buen estado, lista para consumir.",
+      "quantityAvailable": 3,
+      "regularPrice": 18000,
+      "rescuePrice": 8000,
+      "pickupWindow": "Hoy, 4:30 p. m. a 6:00 p. m.",
+      "status": "available",
+      "createdAt": "2026-10-27T13:15:00.000Z"
+    },
+    {
+      "id": "ofr-pas-003",
+      "merchantName": "Café Nube",
+      "name": "Pack de repostería",
+      "category": "Repostería",
+      "description": "Tres productos horneados que conservan calidad y frescura.",
+      "quantityAvailable": 2,
+      "regularPrice": 16000,
+      "rescuePrice": 7000,
+      "pickupWindow": "Hoy, 6:00 p. m. a 7:00 p. m.",
+      "status": "available",
+      "createdAt": "2026-10-27T12:45:00.000Z"
+    }
+  ],
+  "reservations": [],
+  "donations": [],
+  "events": []
+}

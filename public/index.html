@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ee">
+  <title>Alquimia Circular | Excedentes con valor</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Alquimia Circular, inicio">
+      <span class="brand-mark" aria-hidden="true">a</span>
+      <span><strong>Alquimia</strong><small>circular</small></span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a class="nav-link active" href="#resumen">Mi día</a>
+      <a class="nav-link" href="#ofertas">Ofertas</a>
+      <a class="nav-link" href="#crear">Publicar excedente</a>
+    </nav>
+    <div class="account-pill"><span class="avatar">PC</span><span>Panadería La Esquina</span></div>
+  </header>
+
+  <main>
+    <section class="welcome" id="resumen">
+      <div>
+        <p class="eyebrow">MARTES, 27 DE OCTUBRE</p>
+        <h1>Buenas tardes, Juan.</h1>
+        <p class="welcome-copy">Hoy todavía puedes darles una segunda oportunidad a tus productos.</p>
+      </div>
+      <div class="welcome-illustration" aria-hidden="true"><span class="sun"></span><span class="leaf leaf-one"></span><span class="leaf leaf-two"></span><span class="basket"></span></div>
+    </section>
+
+    <section class="metric-grid" aria-label="Resumen de hoy">
+      <article class="metric-card mint"><span class="metric-icon">↗</span><p>Disponibles ahora</p><strong id="available-packs">0</strong><small>packs para rescatar</small></article>
+      <article class="metric-card peach"><span class="metric-icon">◷</span><p>Reservas por recoger</p><strong id="reserved-orders">0</strong><small>pendientes de entrega</small></article>
+      <article class="metric-card lilac"><span class="metric-icon">♡</span><p>Salida registrada</p><strong id="rescued-packs">0</strong><small>recogidos o derivados a donación</small></article>
+    </section>
+
+    <section class="content-grid">
+      <div class="main-column">
+        <div class="section-heading" id="ofertas">
+          <div><p class="eyebrow">VITRINA LOCAL</p><h2>Excedentes para hoy</h2></div>
+          <span class="live-badge"><span></span> Actualizado</span>
+        </div>
+        <div class="offer-list" id="offer-list" aria-live="polite"></div>
+        <div class="section-heading reservation-heading"><div><p class="eyebrow">ENTREGA</p><h2>Reservas por recoger</h2></div></div>
+        <div class="offer-list" id="reservation-list" aria-live="polite"></div>
+      </div>
+
+      <aside class="publish-panel" id="crear">
+        <div class="panel-heading"><div class="panel-icon">＋</div><div><p class="eyebrow">UN PASO SENCILLO</p><h2>Publica un excedente</h2></div></div>
+        <p class="panel-copy">Cuéntanos qué tienes y definimos juntos una salida: venta con descuento o donación.</p>
+        <form id="offer-form">
+          <label>Nombre del producto<input name="name" maxlength="80" placeholder="Ej. Pack de pan del día" required></label>
+          <div class="form-row"><label>Categoría<select name="category" required><option value="">Elige una</option><option>Panadería</option><option>Repostería</option><option>Frutas y verduras</option><option>Comida preparada</option><option>Otros</option></select></label><label>Cantidad<input name="quantityAvailable" type="number" min="1" max="500" value="1" required></label></div>
+          <div class="form-row"><label>Precio habitual<input name="regularPrice" type="number" min="1" placeholder="14000" required></label><label>Precio de rescate<input name="rescuePrice" type="number" min="0" placeholder="6000" required></label></div>
+          <label>Recogida<input name="pickupWindow" maxlength="100" placeholder="Hoy, 5:00 p. m. a 6:30 p. m." required></label>
+          <label>Descripción breve<textarea name="description" maxlength="220" rows="2" placeholder="Cuéntale al cliente qué incluye."></textarea></label>
+          <button class="primary-button" type="submit">Publicar en la vitrina <span>→</span></button>
+          <button class="text-button" type="button" id="donation-help">¿Prefieres donarlo?</button>
+          <p class="form-message" id="form-message" role="status"></p>
+        </form>
+      </aside>
+    </section>
+
+    <footer><span>Alquimia Circular</span><span>Una vitrina para el valor que aún queda.</span><span class="prototype-note">Prototipo académico</span></footer>
+  </main>
+</body>
+</html>

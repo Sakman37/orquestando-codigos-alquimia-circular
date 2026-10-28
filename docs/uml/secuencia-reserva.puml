@@ -1,0 +1,21 @@
+@startuml
+actor Cliente
+participant "Interfaz web" as Web
+participant "API HTTP" as API
+participant MarketplaceService as Service
+participant OfferRepository as Repo
+database "PostgreSQL administrado" as DB
+queue "Cola durable" as Queue
+Cliente -> Web: Selecciona pack y confirma reserva
+Web -> API: POST /api/reservations
+API -> Service: reserveOffer(offerId, quantity)
+Service -> Repo: reserveIfAvailable(id, quantity)
+Repo -> DB: Transacción: verificar y descontar stock
+DB --> Repo: Reserva e inventario confirmados
+Repo --> Service: Reserva creada
+Service -> Queue: ReservationCreated
+Service --> API: reserva + total
+API --> Web: HTTP 201
+Web --> Cliente: Muestra código y ventana de recogida
+Queue -> Queue: Consumidor notifica al comercio
+@enduml

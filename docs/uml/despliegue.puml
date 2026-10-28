@@ -1,0 +1,20 @@
+@startuml
+node "Dispositivo del usuario" {
+  artifact "Navegador web / PWA"
+}
+cloud "Plataforma cloud" {
+  node "CDN + WAF + API Gateway" as Edge
+  node "Contenedor Node.js sin estado" as App
+  database "PostgreSQL administrado" as DB
+  queue "Cola de mensajes" as Queue
+  node "Worker de notificaciones" as Worker
+  node "Observabilidad" as Obs
+}
+artifact "Navegador web / PWA" --> Edge : HTTPS
+Edge --> App : HTTPS / rutas API
+App --> DB : TLS, transacciones
+App --> Queue : eventos
+Queue --> Worker : mensajes
+App --> Obs : logs, métricas, trazas
+Worker --> Obs : logs y estado de entrega
+@enduml

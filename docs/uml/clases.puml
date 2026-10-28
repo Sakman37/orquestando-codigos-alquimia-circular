@@ -1,0 +1,49 @@
+@startuml
+class Comercio {
+  +id: UUID
+  +nombre: String
+  +crearOferta(datos): Offer
+}
+class Oferta {
+  +id: UUID
+  +nombre: String
+  +categoria: String
+  +cantidadDisponible: Integer
+  +precioNormal: Decimal
+  +precioRescate: Decimal
+  +estado: EstadoOferta
+  +reservar(cantidad): Boolean
+}
+class Reserva {
+  +id: UUID
+  +cantidad: Integer
+  +total: Decimal
+  +estado: EstadoReserva
+  +confirmarRecogida(): void
+}
+class Donacion {
+  +id: UUID
+  +cantidad: Integer
+  +aliado: String
+  +estado: EstadoDonacion
+}
+class MarketplaceService {
+  +publicarOferta(datos): Offer
+  +reservar(datos): Reservation
+  +derivarDonacion(offerId): Donation
+}
+interface OfferRepository {
+  +findActive(): List<Offer>
+  +save(offer): void
+  +reserveIfAvailable(id, quantity): Reservation
+}
+class EventBus {
+  +subscribe(type, handler): void
+  +publish(event): void
+}
+Comercio "1" -- "0..*" Oferta
+Oferta "1" -- "0..*" Reserva
+Oferta "1" -- "0..*" Donacion
+MarketplaceService ..> OfferRepository
+MarketplaceService ..> EventBus
+@enduml

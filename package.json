@@ -1,0 +1,13 @@
+{
+  "name": "alquimia-circular",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prototipo académico de una plataforma de rescate de excedentes alimentarios",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

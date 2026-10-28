@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+actor Comercio
+actor Cliente
+actor "Aliado social" as Aliado
+rectangle "Alquimia Circular" {
+  usecase "Publicar excedente" as UC1
+  usecase "Consultar ofertas" as UC2
+  usecase "Reservar pack" as UC3
+  usecase "Confirmar recogida" as UC4
+  usecase "Derivar a donación" as UC5
+  usecase "Confirmar recepción" as UC6
+}
+Comercio --> UC1
+Comercio --> UC4
+Comercio --> UC5
+Cliente --> UC2
+Cliente --> UC3
+Aliado --> UC6
+UC5 ..> UC6 : <<include>>
+@enduml
